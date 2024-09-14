@@ -1,0 +1,34 @@
+// Layer.java
+import java.util.ArrayList;
+
+public class Layer {
+    private ArrayList<Neuron> neurons;
+    private int layerId;
+
+    public Layer(int layerId, int numberOfNeurons) {
+        this.layerId = layerId;
+        neurons = new ArrayList<>();
+
+        for (int i = 0; i < numberOfNeurons; i++) {
+            neurons.add(new Neuron(i));
+        }
+    }
+
+    public ArrayList<Neuron> getNeurons() {
+        return neurons;
+    }
+
+    public int getLayerId() {
+        return layerId;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Layer ").append(layerId).append(": ");
+        for (Neuron neuron : neurons) {
+            sb.append(neuron.toString()).append(" ");
+        }
+        return sb.toString();
+    }
+}

@@ -1,0 +1,17 @@
+// Neuron.java
+public class Neuron {
+    private int id;
+
+    public Neuron(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Neuron " + id;
+    }
+}

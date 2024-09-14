@@ -1,0 +1,16 @@
+// Visualizer.java
+public class Visualizer {
+
+    public static void visualize(NeuralNetwork network) {
+        System.out.println("\nVisualizing Neural Network:");
+        for (Layer layer : network.getLayers()) {
+            System.out.println("Layer " + layer.getLayerId());
+            for (Neuron neuron : layer.getNeurons()) {
+                System.out.print(" O "); // Represents a neuron
+            }
+            System.out.println(); // Newline between layers
+            System.out.println(" | | | "); // Represents connections
+        }
+        System.out.println("Visualization Complete.\n");
+    }
+}

@@ -1,0 +1,27 @@
+// NeuralNetwork.java
+import java.util.ArrayList;
+
+public class NeuralNetwork {
+    private ArrayList<Layer> layers;
+
+    public NeuralNetwork() {
+        layers = new ArrayList<>();
+    }
+
+    public void addLayer(int numberOfNeurons) {
+        int layerId = layers.size();
+        Layer newLayer = new Layer(layerId, numberOfNeurons);
+        layers.add(newLayer);
+    }
+
+    public ArrayList<Layer> getLayers() {
+        return layers;
+    }
+
+    public void visualize() {
+        System.out.println("Neural Network Structure:");
+        for (Layer layer : layers) {
+            System.out.println(layer);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// Main.java
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        NeuralNetwork network = new NeuralNetwork();
+
+        System.out.println("Welcome to the Neural Network Visualizer!");
+
+        // User Input for the Number of Layers
+        System.out.print("Enter the number of layers: ");
+        int numberOfLayers = scanner.nextInt();
+
+        // Add layers and neurons to the network
+        for (int i = 0; i < numberOfLayers; i++) {
+            System.out.print("Enter the number of neurons for Layer " + (i) + ": ");
+            int numberOfNeurons = scanner.nextInt();
+            network.addLayer(numberOfNeurons);
+        }
+
+        // Visualize the Network
+        network.visualize();
+        Visualizer.visualize(network);
+        
+        scanner.close();
+    }
+}
